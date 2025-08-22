@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import controller from './assets/controller.png';
 import { NavLink } from 'react-router-dom';
-import './App.css';
+import './index.css';
 
 function App() {
   return (
     <div>
-      <img className="w-60 !mt-20" src={controller} alt="Controller" />
+      <img
+        className="w-60 !mt-20 animate-shake"
+        src={controller}
+        alt="Controller"
+      />
 
       <div className="!mt-50">
-        <nav>
-          <ul className="flex flex-wrap w-83  text-white gap-4">
+        <nav className="flex items-centre m-0 m-auto">
+          <ul className="flex flex-wrap w-[350px]  text-white gap-4">
             <li className="flex items-center">
               <NavLink
                 className="bg-[#C04870] p-5 h-[64px] w-[118px] text-center rounded-l-2xl rounded-r-sm"
