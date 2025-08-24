@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import controller from './assets/controller.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Routes, Route } from 'react-router-dom';
+import TicTacToe from './TicTacToe.jsx';
 import './index.css';
 
 function App() {
   return (
     <div>
-      <img
-        className="w-60 !mt-20 animate-shake"
-        src={controller}
-        alt="Controller"
-      />
+      <NavLink to="/">
+        <img
+          className="w-60 !mt-20 animate-shake"
+          src={controller}
+          alt="Controller"
+        />
+      </NavLink>
 
       <div className="!mt-50">
         <nav className="flex items-centre m-0 m-auto">
@@ -24,7 +27,7 @@ function App() {
               </NavLink>
             </li>
             <li className="flex items-center ">
-              <NavLink className="bg-[#3A3F74]  p-5 rounded-sm" to="/">
+              <NavLink className="bg-[#3A3F74]  p-5 rounded-sm" to="tictactoe">
                 {' '}
                 X
               </NavLink>
@@ -51,6 +54,9 @@ function App() {
           </ul>
         </nav>
       </div>
+      <Routes>
+        <Route path="/tictactoe" element={<TicTacToe />} />
+      </Routes>
     </div>
   );
 }
