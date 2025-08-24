@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import controller from './assets/controller.png';
-import { NavLink, Routes, Route } from 'react-router-dom';
+import { NavLink, Routes, Route, HashRouter } from 'react-router-dom';
 import TicTacToe from './TicTacToe.jsx';
 import './index.css';
 
@@ -27,7 +27,10 @@ function App() {
               </NavLink>
             </li>
             <li className="flex items-center ">
-              <NavLink className="bg-[#3A3F74]  p-5 rounded-sm" to="tictactoe">
+              <NavLink
+                className="bg-[#3A3F74]  p-5 rounded-sm"
+                to="minigames/tictactoe"
+              >
                 {' '}
                 X
               </NavLink>
@@ -55,7 +58,7 @@ function App() {
         </nav>
       </div>
       <Routes>
-        <Route path="/tictactoe" element={<TicTacToe />} />
+        <Route path="minigames/tictactoe" element={<TicTacToe />} />
       </Routes>
     </div>
   );
