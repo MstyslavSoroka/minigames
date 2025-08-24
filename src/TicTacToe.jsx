@@ -73,7 +73,7 @@ function TicTacToe() {
           </div>
         ))}
       </div>
-      <p className="message text-center text-white pt-10 pb-50">{msg}</p>
+      <p className="message text-center text-white pt-10 pb-55">{msg}</p>
     </div>
   );
 }
