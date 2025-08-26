@@ -80,7 +80,7 @@ function TicTacToe() {
         ))}
       </div>
       <p className="message text-center text-white pt-10">{msg}</p>
-      <div className="flex items-center pt-5">
+      <div className="flex items-center pt-5 pb-55">
         <button
           onClick={resetGame}
           className="bg-[#C04870] py-3 px-6 rounded-2xl text-white font-bold ease-in duration-100 hover:px-10"
