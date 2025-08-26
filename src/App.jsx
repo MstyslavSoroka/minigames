@@ -7,7 +7,7 @@ import './index.css';
 function App() {
   return (
     <div>
-      <NavLink to="/">
+      <NavLink to="/minigames/">
         <img
           className="w-60 !mt-20 animate-shake"
           src={controller}

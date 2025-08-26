@@ -19,9 +19,8 @@ function TicTacToe() {
   ];
 
   const handleClick = (i) => {
-    if (cells[i] !== '' || msg.includes('Won')) {
-      return;
-    }
+    if (cells[i] !== '' || msg.includes('Won')) return;
+
     const newCells = [...cells];
     newCells[i] = player;
     setCells(newCells);
@@ -31,14 +30,14 @@ function TicTacToe() {
       setxCombo(newXCombo);
       if (!checkWin(newXCombo, 'X')) {
         setPlayer('O');
-        setMsg(`It's player O move`);
+        setMsg("It's player O move");
       }
     } else {
       const newOCombo = [...oCombo, i];
       setoCombo(newOCombo);
       if (!checkWin(newOCombo, 'O')) {
         setPlayer('X');
-        setMsg(`It's player X move`);
+        setMsg("It's player X move");
       }
     }
   };
@@ -50,30 +49,45 @@ function TicTacToe() {
         return true;
       }
     }
-    if (cells.every((cell) => cell != '')) {
+    if (cells.every((cell) => cell !== '')) {
       setMsg("It's a tie");
       return false;
     }
   };
 
+  const resetGame = () => {
+    setPlayer('X');
+    setCells(Array(9).fill(''));
+    setMsg("It's player X move");
+    setxCombo([]);
+    setoCombo([]);
+  };
+
   return (
     <div className="pt-20">
-      <h1 className="text-center pb-10 text-white text-2xl ">
+      <h1 className="text-center pb-10 text-white text-2xl">
         Tic Tac Toe minigame
       </h1>
       <div className="field flex flex-wrap w-[300px] gap-5">
         {cells.map((value, i) => (
           <div
             key={i}
-            id={`cell${i + 1}`}
-            className="cell w-20 h-20 bg-[#121212] text-white items-center flex justify-center text-2xl"
+            className="cell w-20 h-20 bg-[#121212] text-white flex items-center justify-center text-2xl cursor-pointer"
             onClick={() => handleClick(i)}
           >
             {value}
           </div>
         ))}
       </div>
-      <p className="message text-center text-white pt-10 pb-55">{msg}</p>
+      <p className="message text-center text-white pt-10">{msg}</p>
+      <div className="flex items-center pt-5">
+        <button
+          onClick={resetGame}
+          className="bg-[#C04870] py-3 px-6 rounded-2xl text-white font-bold ease-in duration-100 hover:px-10"
+        >
+          Reset
+        </button>
+      </div>
     </div>
   );
 }
