@@ -49,6 +49,7 @@ function TicTacToe() {
         return true;
       }
     }
+    // Not working, fuck
     if (cells.every((cell) => cell !== '')) {
       setMsg("It's a tie");
       return false;

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import controller from './assets/controller.png';
 import { NavLink, Routes, Route, HashRouter } from 'react-router-dom';
 import TicTacToe from './TicTacToe.jsx';
+import Pokemons from './Pokemons.jsx';
 import './index.css';
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
             <li className="flex items-center">
               <NavLink
                 className="bg-[#C04870] p-5 h-[64px] w-[118px] text-center rounded-r-2xl rounded-l-sm"
-                to="/"
+                to="minigames/pokemons"
               >
                 pokemons
               </NavLink>
@@ -59,6 +60,7 @@ function App() {
       </div>
       <Routes>
         <Route path="minigames/tictactoe" element={<TicTacToe />} />
+        <Route path="minigames/pokemons" element={<Pokemons />} />
       </Routes>
     </div>
   );
