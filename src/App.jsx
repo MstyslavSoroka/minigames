@@ -3,6 +3,7 @@ import controller from './assets/controller.png';
 import { NavLink, Routes, Route, HashRouter } from 'react-router-dom';
 import TicTacToe from './TicTacToe.jsx';
 import Pokemons from './Pokemons.jsx';
+import Wordle from './Wordle.jsx';
 import './index.css';
 
 function App() {
@@ -47,12 +48,12 @@ function App() {
             <li className="flex items-center">
               <NavLink
                 className="bg-[#C04870] p-5 w-[50px] rounded-b-2xl  rounded-t-sm"
-                to="/"
+                to="minigames/wordle"
               >
-                H <br />
-                A <br />
-                N <br />
-                G <br />
+                W <br />
+                O <br />
+                R <br />
+                D <br />
               </NavLink>
             </li>
           </ul>
@@ -61,6 +62,7 @@ function App() {
       <Routes>
         <Route path="minigames/tictactoe" element={<TicTacToe />} />
         <Route path="minigames/pokemons" element={<Pokemons />} />
+        <Route path="minigames/wordle" element={<Wordle />} />
       </Routes>
     </div>
   );
